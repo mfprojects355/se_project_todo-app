@@ -30,6 +30,11 @@ const generateTodo = (data) => {
   return todo.getView();
 };
 
+const renderTodo = (data) => {
+  const todo = generateTodo(data);
+  todosList.append(todo);
+};
+
 const formValidator = new FormValidator(validationConfig, addTodoForm);
 formValidator.enableValidation();
 
@@ -50,14 +55,10 @@ addTodoForm.addEventListener("submit", (evt) => {
   const date = new Date(dateInput);
   date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
 
-  const values = { id: uuidv4(), name, date };
-  const todo = generateTodo(values);
-  todosList.append(todo);
+  const newTodo = { id: uuidv4(), name, date };
+  renderTodo(newTodo);
   formValidator.resetValidation();
   closeModal(addTodoPopup);
 });
 
-initialTodos.forEach((item) => {
-  const todo = generateTodo(item);
-  todosList.append(todo);
-});
+initialTodos.forEach(renderTodo);
