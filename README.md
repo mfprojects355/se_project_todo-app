@@ -1,31 +1,33 @@
-# Simple Todo App
+# The Simple ToDo App
 
-A client-side to-do list app refactored with object-oriented JavaScript. Users can view todos, add new items with optional due dates, mark items complete, delete items, and validate the add-todo form.
+A client-side to-do list application built with vanilla JavaScript. The project was refactored using object-oriented programming: each to-do is rendered by a `Todo` class instance, and the add-to-do form is validated by a `FormValidator` class.
 
 ## Functionality
 
-- Display initial to-do items from configuration data
-- Open and close the add-todo modal
-- Create new to-dos with unique IDs (via `uuid`)
-- Optional due dates with formatted display
-- Mark to-dos complete or delete them
-- Real-time form validation with disabled submit until inputs are valid
-- Reset form fields and validation state after successful submission only
+- Renders an initial list of to-do items from a JavaScript array
+- Opens and closes the add-to-do modal via the Add button, close button, or Escape key
+- Creates new to-dos with optional due dates; submit works via the Create button or Enter in a form field
+- Marks to-dos as completed or uncompleted via checkbox
+- Deletes to-dos with the Delete button
+- Generates unique IDs for new items with the `uuid` package (CDN)
+- Uses unique `id` / `for` attributes on checkboxes and labels
+- Validates the form in real time; disables Create until inputs are valid
+- Resets the form only after a successful submission (closing without submit keeps entered data)
 
 ## Technology
 
-- HTML, CSS (BEM-style blocks)
-- JavaScript ES modules
-- OOP: `Todo` and `FormValidator` classes
-- `uuid` imported from CDN (`jspm.dev`)
+- HTML5, CSS3 (BEM-style file structure)
+- JavaScript (ES6 modules, classes, private methods with `_` prefix)
+- `Todo` and `FormValidator` classes in separate files
+- Constants in `utils/constants.js`
+- `uuid` v4 from CDN (`https://jspm.dev/uuid`)
+- GitHub Pages for deployment
 
-## Project structure
+## Screenshots
 
-```
-components/     Todo.js, FormValidator.js
-pages/          index.js, index.css
-utils/          constants.js
-```
+Add screenshots of your deployed app here before submission, for example:
+
+![The Simple ToDo App main view](./images/screenshot-main.png)
 
 ## Deployment
 

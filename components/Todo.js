@@ -39,13 +39,21 @@ class Todo {
     }
   }
 
+  _handleDeleteClick() {
+    this._element.remove();
+  }
+
+  _handleCheckboxChange() {
+    this._data.completed = this._checkboxEl.checked;
+  }
+
   _setEventListeners() {
     this._deleteBtn.addEventListener("click", () => {
-      this._element.remove();
+      this._handleDeleteClick();
     });
 
     this._checkboxEl.addEventListener("change", () => {
-      this._data.completed = this._checkboxEl.checked;
+      this._handleCheckboxChange();
     });
   }
 
