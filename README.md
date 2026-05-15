@@ -31,6 +31,6 @@ utils/          constants.js
 
 This project is deployed on GitHub Pages:
 
-- https://mfprojects355.github.io/se_project_todo-app/
+- https://mfprojects355.github.io/se_project_todo-app-main/
 
-Repository: https://github.com/mfprojects355/se_project_todo-app
+Repository: https://github.com/mfprojects355/se_project_todo-app-main
