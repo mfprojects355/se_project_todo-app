@@ -33,6 +33,6 @@ Add screenshots of your deployed app here before submission, for example:
 
 This project is deployed on GitHub Pages:
 
-- https://mfprojects355.github.io/se_project_todo-app-main/
+- https://mfprojects355.github.io/se_project_todo-app/
 
-Repository: https://github.com/mfprojects355/se_project_todo-app-main
+Repository: https://github.com/mfprojects355/se_project_todo-app
