@@ -8,6 +8,7 @@ const addTodoPopup = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
+const counterText = document.querySelector(".counter__text");
 
 const handleEscapeClose = (evt) => {
   if (evt.key === "Escape") {
@@ -30,10 +31,29 @@ const generateTodo = (data) => {
   return todo.getView();
 };
 
+const updateCounter = () => {
+  const total = todosList.querySelectorAll(".todo").length;
+  const completed = todosList.querySelectorAll(".todo__completed:checked").length;
+  counterText.textContent = `Showing ${completed} out of ${total} completed`;
+};
+
 const renderTodo = (data) => {
   const todo = generateTodo(data);
   todosList.append(todo);
+  updateCounter();
 };
+
+todosList.addEventListener("change", (evt) => {
+  if (evt.target.matches(".todo__completed")) {
+    updateCounter();
+  }
+});
+
+todosList.addEventListener("click", (evt) => {
+  if (evt.target.closest(".todo__delete-btn")) {
+    updateCounter();
+  }
+});
 
 const formValidator = new FormValidator(validationConfig, addTodoForm);
 formValidator.enableValidation();
